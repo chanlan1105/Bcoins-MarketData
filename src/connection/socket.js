@@ -40,4 +40,4 @@ function Socket(token) {
     return socket;
 };
 
-export const socket = Socket(process.env.bcToken);
+export const socket = Socket(process.env.BC_TOKEN);
