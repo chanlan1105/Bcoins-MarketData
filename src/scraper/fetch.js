@@ -30,7 +30,7 @@ export default async function fetchMarketData([period, granularity], offset=1, i
     }
 
     /** Start item ID */
-    const start = item == "all" ? 1 : item;
+    const start = item == "all" ? 0 : item;
     /** End item ID */
     const end = item == "all" ? items.length : item + 1;
 
@@ -122,6 +122,9 @@ export default async function fetchMarketData([period, granularity], offset=1, i
                 sortedData.splice(1);
                 return _med;
             }
+
+            // Otherwise, accumulate total
+            return total;
         }, 0);
 
         // Save to database
