@@ -6,7 +6,7 @@ import isSameOrAfter from "dayjs/plugin/isSameOrAfter.js";
 dayjs.extend(utc);
 dayjs.extend(isSameOrAfter);
 
-import Item from "../mongoose/Item.js";
+import Item from "../mongoose/schema/Item.js";
 import items from "../../data/items.json" with { type: "json" };
 import { setTimeout as Delay } from "timers/promises";
 

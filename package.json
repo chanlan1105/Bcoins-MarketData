@@ -5,7 +5,7 @@
   "main": "scraper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start ./index.js --name market_data --no-autorestart --instances 1 --cron \"15 */4 * * *\"",
+    "start": "pm2 start ./index.js --name market_data --no-autorestart --instances 1 --cron \"15 */4 * * *\" -- --verbose",
     "stop": "pm2 delete market_data"
   },
   "author": "",
