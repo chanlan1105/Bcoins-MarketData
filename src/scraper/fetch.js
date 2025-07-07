@@ -9,6 +9,7 @@ dayjs.extend(isSameOrAfter);
 import Item from "../mongoose/schema/Item.js";
 import items from "../../data/items.json" with { type: "json" };
 import { setTimeout as Delay } from "timers/promises";
+import writeToSheet from "../sheets/write.js";
 
 /** If extended logging should be used */
 const verbose = process.argv.slice(2).includes("--verbose");
@@ -159,4 +160,9 @@ export default async function fetchMarketData([period, granularity], offset=1, i
     }
 
     console.log("Saved to database!");
+
+    // Write to GSheet
+    await writeToSheet([4, "h"], 1);
+
+    console.log("Saved to Google Sheets!");
 }
